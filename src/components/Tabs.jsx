@@ -1,24 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const Tabs = ({ children }) => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <div className="tabs">
-      <div className="tab-buttons">
+    <div className="w-full">
+      {/* Tabs Buttons */}
+      <div className="flex justify-center space-x-4 mb-6">
         {children.map((tab, index) => (
           <button
             key={index}
-            className={index === activeTab ? 'active' : ''}
             onClick={() => setActiveTab(index)}
+            className={`px-6 py-3 rounded-full text-lg font-semibold transition-all duration-300
+              ${
+                activeTab === index
+                  ? "bg-blue-600 text-white shadow-md"
+                  : "bg-blue-100 text-blue-700 hover:bg-blue-200"
+              }`}
           >
             {tab.props.title}
           </button>
         ))}
       </div>
-      <div className="tab-content">
-        {children[activeTab]}
-      </div>
+
+      {/* Active Tab Content */}
+      <div>{children[activeTab]}</div>
     </div>
   );
 };
