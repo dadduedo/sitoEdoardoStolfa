@@ -18,108 +18,125 @@ const CvTab = () => {
     { name: "Next.js", color: "bg-fuchsia-500", url: "https://nextjs.org" },
   ];
 
-    const handleSkillClick = (url) => {
+  const handleSkillClick = (url) => {
     window.open(url, "_blank");
   };
 
   return (
-    <div className="p-8 max-w-5xl mx-auto bg-gradient-to-b from-blue-50 to-white rounded-3xl shadow-xl">
-    <div className="grid grid-cols-3 items-center mb-8">
-      <div></div>
-      <h2 className="text-4xl font-bold text-blue-700 text-center">
-        Software Engineer
-      </h2>
-      <div className="text-right">
-        <a
-          href="/Edoardo-Stolfa-Resume.docx"
-          download
-          className="inline-flex items-center gap-2 px-6 py-3 text-lg font-semibold text-white bg-blue-600 rounded-full shadow hover:bg-blue-700 transition"
-        >
-          📄 Scarica CV
-        </a>
+    <div className="p-4 sm:p-6 md:p-8 max-w-3xl sm:max-w-4xl md:max-w-5xl mx-auto bg-gradient-to-b from-blue-50 to-white rounded-3xl shadow-xl">
+      {/* Header */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 items-center mb-8 gap-4">
+        <div></div>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-700 text-center">
+          Software Engineer
+        </h2>
+        <div className="text-center sm:text-right">
+          <a
+            href="/Edoardo-Stolfa-Resume.docx"
+            download
+            className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-lg font-semibold text-white bg-blue-600 rounded-full shadow hover:bg-blue-700 transition"
+          >
+            📄 Scarica CV
+          </a>
+        </div>
       </div>
-    </div>
-      <p className="text-gray-600 mb-4">
-        📍 Italy, EU | 📧 <a
-    href="mailto:dadduedo@gmail.com"
-    className="text-blue-600 hover:underline"
-  >
-    dadduedo@gmail.com
-  </a> | 📱 +39 334 321 3210
-      </p>
-      <h3 className="text-2xl font-semibold text-blue-600 mt-6 mb-4">Skills</h3>
 
-      <div className="grid grid-cols-4 gap-6 mb-6">
+      {/* Contatti */}
+      <p className="text-gray-600 mb-4 text-sm sm:text-base text-center sm:text-left">
+        📍 Italy, EU<br />
+        📧 <a
+          href="mailto:dadduedo@gmail.com"
+          className="text-blue-600 hover:underline"
+        >
+          dadduedo@gmail.com
+        </a><br />
+        📱 +39 334 321 3210
+      </p>
+
+      {/* Skills */}
+      <h3 className="text-xl sm:text-2xl font-semibold text-blue-600 mt-4 sm:mt-6 mb-3 sm:mb-4">Skills</h3>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 mb-6">
         {skills.map((skill, index) => (
           <button
             key={index}
             onClick={() => handleSkillClick(skill.url)}
-            className={`${skill.color} w-full py-8 text-xl font-bold text-white rounded-2xl shadow-lg hover:scale-105 hover:shadow-xl transition transform`}
+            className={`${skill.color} w-full py-3 sm:py-5 md:py-6 text-sm sm:text-lg md:text-xl font-bold text-white rounded-2xl shadow-lg hover:scale-105 hover:shadow-xl transition transform`}
           >
             {skill.name}
           </button>
         ))}
       </div>
 
-      <h3 className="text-2xl font-semibold text-blue-600 mt-6 mb-2">
+      {/* Esperienze */}
+      <h3 className="text-xl sm:text-2xl font-semibold text-blue-600 mt-4 sm:mt-6 mb-2 sm:mb-3">
         Esperienze Lavorative
       </h3>
-      <div className="mb-4">
-        <p className="font-bold text-lg">Bvtech</p>
-        <p className="text-sm text-gray-500">Software Developer (2025 - Presente)</p>
-        <p className="text-gray-700">
-          Full-stack development with typescript of core functions
-        </p>
-      </div>
-      <div className="mb-4">
-        <p className="font-bold text-lg">Fybra</p>
-        <p className="text-sm text-gray-500">Software Developer (2024 - 2025)</p>
-        <p className="text-gray-700">
-          Back-end in TypeScript per 3 app front-end, architettura serverless con Node.js, sviluppo Angular e React.
-        </p>
-      </div>
+      {[
+        {
+          company: "Bvtech",
+          role: "Software Developer (2025 - Presente)",
+          description: "Full-stack development with TypeScript of core functions",
+        },
+        {
+          company: "Fybra",
+          role: "Software Developer (2024 - 2025)",
+          description: "Back-end in TypeScript per 3 app front-end, architettura serverless con Node.js, sviluppo Angular e React.",
+        },
+        {
+          company: "Verisure",
+          role: "Software Developer (2023 - 2024)",
+          description: "Ottimizzazione performance web, back-end serverless AWS Lambda/DynamoDB, Docker, documentazione interna.",
+        },
+        {
+          company: "BGP Management Consulting",
+          role: "Software Developer (2020 - 2023)",
+          description: "Sviluppo microservizi Node.js per SAP, testing con Jenkins/Azure, miglioramento performance del 50%.",
+        },
+      ].map((job, index) => (
+        <div key={index} className="mb-3 sm:mb-4">
+          <p className="font-bold text-base sm:text-lg">{job.company}</p>
+          <p className="text-xs sm:text-sm text-gray-500">{job.role}</p>
+          <p className="text-gray-700 text-sm sm:text-base">{job.description}</p>
+        </div>
+      ))}
 
-      <div className="mb-4">
-        <p className="font-bold text-lg">Verisure</p>
-        <p className="text-sm text-gray-500">Software Developer (2023 - 2024)</p>
-        <p className="text-gray-700">
-          Ottimizzazione performance web, back-end serverless AWS Lambda/DynamoDB, Docker, documentazione interna.
-        </p>
-      </div>
-
-      <div className="mb-4">
-        <p className="font-bold text-lg">BGP Management Consulting</p>
-        <p className="text-sm text-gray-500">Software Developer (2020 - 2023)</p>
-        <p className="text-gray-700">
-          Sviluppo microservizi Node.js per SAP, testing con Jenkins/Azure, miglioramento performance del 50%.
-        </p>
-      </div>
-
-      <h3 className="text-2xl font-semibold text-blue-600 mt-6 mb-2">Progetti</h3>
-      <p className="text-gray-700 mb-4">
+      {/* Progetti */}
+      <h3 className="text-xl sm:text-2xl font-semibold text-blue-600 mt-4 sm:mt-6 mb-2 sm:mb-3">
+        Progetti
+      </h3>
+      <p className="text-gray-700 text-sm sm:text-base mb-4">
         <strong>E-commerce Platform (2022 - 2023):</strong> React, Next.js, MongoDB, test e documentazione completa.
       </p>
 
-      <h3 className="text-2xl font-semibold text-blue-600 mt-6 mb-2">Formazione</h3>
-      <p className="text-gray-700">
+      {/* Formazione */}
+      <h3 className="text-xl sm:text-2xl font-semibold text-blue-600 mt-4 sm:mt-6 mb-2 sm:mb-3">
+        Formazione
+      </h3>
+      <p className="text-gray-700 text-sm sm:text-base">
         Laurea Triennale, Università di Cassino (2019)
       </p>
 
-      <h3 className="text-2xl font-semibold text-blue-600 mt-6 mb-2">Certificazioni</h3>
-      <p className="text-gray-700">
+      {/* Certificazioni */}
+      <h3 className="text-xl sm:text-2xl font-semibold text-blue-600 mt-4 sm:mt-6 mb-2 sm:mb-3">
+        Certificazioni
+      </h3>
+      <p className="text-gray-700 text-sm sm:text-base">
         Scrum Fundamentals Certified
       </p>
 
-      <a
-        href="/Edoardo-Stolfa-Resume.docx"
-        download
-        className="inline-flex items-center gap-2 mt-8 px-6 py-3 text-lg font-semibold text-white bg-blue-600 rounded-full shadow hover:bg-blue-700 transition"
-      >
-        📄 Scarica CV
-      </a>
+      {/* Scarica CV */}
+      <div className="flex justify-center sm:justify-start">
+        <a
+          href="/Edoardo-Stolfa-Resume.docx"
+          download
+          className="inline-flex items-center gap-2 mt-6 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-lg font-semibold text-white bg-blue-600 rounded-full shadow hover:bg-blue-700 transition"
+        >
+          📄 Scarica CV
+        </a>
+      </div>
     </div>
-    
   );
 };
 
 export default CvTab;
+

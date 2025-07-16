@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const Tabs = ({ children }) => {
   const [activeTab, setActiveTab] = useState(0);
@@ -6,7 +6,8 @@ const Tabs = ({ children }) => {
   return (
     <div className="w-full">
       {/* Tabs Buttons */}
-      <div className="flex justify-center space-x-4 mb-6">
+      <div className="flex justify-center flex-wrap sm:flex-nowrap overflow-x-auto space-x-2 sm:space-x-4 mb-6 px-2">
+
         {children.map((tab, index) => (
           <button
             key={index}
