@@ -3,13 +3,13 @@ const BooksTab = () => {
   const books = [
     {
       title: "I Tentacoli del destino",
-      description: "Una storia di riscatto, coraggio e magia che ti trasporterà in un mondo fantastico.",
+      description: "Wex si sveglia da quasi cento anni in un letto comodo. Circondato da un mondo in pace e tutto sommato tranquillo. Ma un destino capriccioso si è stancato di tutta quella quiete e ha deciso di smuovere un po' le acque. Forse un po' troppo? Certo è che questo particolare elfo sconvolgerà drasticamente l'intero mondo. Se vi piacciono i fantasy non troppo fantasy, con una storia piena di morti e tanta ironia, siete davanti al libro giusto.",
       image: "/images/copertinaLibro1.jpg",
       amazonLink: "https://www.amazon.it/dp/B09DHNVS6T/ref=sr_1_3?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=principe+sconfitti&qid=1629874249&sr=8-3"
     },
     {
       title: "Il Necro-druido",
-      description: "Il secondo capitolo di una saga epica dove i personaggi sfidano il destino.",
+      description: "Signori e signore, buon salve a tutti. Siete tornati qui dopo aver letto il primo libro? Bravi bravi avete dei gusti raffinati. Se non avete letto il primo libro e siete qui per sbaglio, vi prego leggetevi il primo perché altrimenti non capireste nulla. Non perché scrivo male io ma perché non ho voglia di fare riassunti brutti. Detto questo, sedetevi comodi e godetevi insieme a me le avventure di Wex e i suoi. Spero che tra uccisioni varie e imprese incredibili possa io sapervi intrattenere ancora una volta.",
       image: "/images/copertinaLibro2.jpg",
       amazonLink: "https://www.amazon.it/Necro-Druido-Principe-degli-sconfitti-Vol-ebook/dp/B0DH3SHSWM?ref_=saga_dp_bnx_dsk_dp&qid=1629874249&sr=8-3"
     },
@@ -23,15 +23,19 @@ const BooksTab = () => {
  
   return (
     <div className="text-center p-6">
-      <h2 className="text-3xl font-bold text-blue-700 mb-8">Il Principe degli sconfitti</h2>
-        <p className="text-gray-600 mb-8 italic">
+      <div className="bg-sky-100 rounded-xl p-6 mb-8 shadow">
+        <h2 className="text-3xl font-bold text-blue-700 mb-4">
+          Il Principe degli sconfitti
+        </h2>
+        <p className="text-gray-700 italic">
           Collana di romanzi fantasy che raccontano una storia "epica" di vendetta, coraggio e testate.
         </p>
+      </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {books.map((book, index) => (
           <div
             key={index}
-            className="bg-white rounded-2xl shadow-lg p-4 flex flex-col items-center"
+            className="bg-blue-100 rounded-2xl shadow-lg p-4 flex flex-col items-center"
           >
             <img
               src={book.image}

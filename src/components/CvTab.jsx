@@ -24,8 +24,21 @@ const CvTab = () => {
 
   return (
     <div className="p-8 max-w-5xl mx-auto bg-gradient-to-b from-blue-50 to-white rounded-3xl shadow-xl">
-      <h2 className="text-4xl font-bold text-blue-700 mb-4">Software Engineer</h2>
-      
+    <div className="grid grid-cols-3 items-center mb-8">
+      <div></div>
+      <h2 className="text-4xl font-bold text-blue-700 text-center">
+        Software Engineer
+      </h2>
+      <div className="text-right">
+        <a
+          href="/Edoardo-Stolfa-Resume.docx"
+          download
+          className="inline-flex items-center gap-2 px-6 py-3 text-lg font-semibold text-white bg-blue-600 rounded-full shadow hover:bg-blue-700 transition"
+        >
+          📄 Scarica CV
+        </a>
+      </div>
+    </div>
       <p className="text-gray-600 mb-4">
         📍 Italy, EU | 📧 <a
     href="mailto:dadduedo@gmail.com"
