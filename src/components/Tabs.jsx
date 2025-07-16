@@ -12,12 +12,12 @@ const Tabs = ({ children }) => {
           <button
             key={index}
             onClick={() => setActiveTab(index)}
-            className={`px-6 py-3 rounded-full text-lg font-semibold transition-all duration-300
-              ${
-                activeTab === index
-                  ? "bg-blue-600 text-white shadow-md"
-                  : "bg-blue-100 text-blue-700 hover:bg-blue-200"
-              }`}
+            className={`px-3 sm:px-6 py-2 sm:py-3 rounded-full text-base sm:text-lg font-semibold transition-all duration-300
+            ${
+              activeTab === index
+                ? "bg-blue-600 text-white shadow-md"
+                : "bg-blue-100 text-blue-700 hover:bg-blue-200"
+            }`}
           >
             {tab.props.title}
           </button>
